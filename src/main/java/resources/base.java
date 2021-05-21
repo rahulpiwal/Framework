@@ -19,39 +19,34 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class base {
-	public WebDriver driver=null;
+	public WebDriver driver = null;
 	public Properties prop;
-	public WebDriver initilizeDriver() throws IOException
-	{
-		
-	     prop  = new Properties();
-		FileInputStream fis=new FileInputStream("C:\\eclipse-work\\E2EProject\\src\\main\\java\\resources\\data.properties");
+
+	public WebDriver initilizeDriver() throws IOException {
+
+		prop = new Properties();
+		FileInputStream fis = new FileInputStream(
+				"C:\\eclipse-work\\E2EProject\\src\\main\\java\\resources\\data.properties");
 		prop.load(fis);
-		String browserName=prop.getProperty("browser");
+		String browserName = prop.getProperty("browser");
 		System.out.println(browserName);
-		if(browserName.equalsIgnoreCase("chrome"))
-		{
-			System.out.println(browserName +"gfhdghh");
-		System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
-		System.out.println("rahul1");
-			 ChromeOptions handlingSSL = new ChromeOptions();
-			 System.out.println("rahulpiwal2");
-			 handlingSSL.setAcceptInsecureCerts(true);
-			 System.out.println("rahulpiwa3");
-			 driver=new ChromeDriver(handlingSSL);
-		System.out.println("rahulpiwal");
+		if (browserName.equalsIgnoreCase("chrome")) {
+			System.out.println(browserName);
+			System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
+			ChromeOptions handlingSSL = new ChromeOptions();
+			handlingSSL.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(handlingSSL);
 		}
-		
-	
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
-		
+
 	}
-	public String getSceenShotPath(String testCaseName, WebDriver driver) throws IOException
-	{
-		TakesScreenshot ts=(TakesScreenshot)driver;
-		File source=ts.getScreenshotAs(OutputType.FILE);
-		String destinationFile=System.getProperty("user.dir")+"\\reports\\"+testCaseName+".png";
+
+	public String getSceenShotPath(String testCaseName, WebDriver driver) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		String destinationFile = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
 		FileUtils.copyFile(source, new File(destinationFile));
 		return destinationFile;
 	}
