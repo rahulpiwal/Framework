@@ -1,0 +1,8 @@
+23:04:07.068 [main] INFO  resources.base - Driver is initilize
+23:04:28.117 [main] INFO  resources.base - Navigated to homepae
+23:04:29.651 [main] INFO  resources.base - Succefully passed assert condition
+23:04:36.189 [main] INFO  resources.base - Driver is initilize
+23:04:56.411 [main] INFO  resources.base - Navigated to homepae
+23:05:02.744 [main] INFO  resources.base - Data Recivied
+23:05:15.941 [main] INFO  resources.base - Driver is initilize
+23:05:34.641 [main] INFO  resources.base - Navigated to homepae

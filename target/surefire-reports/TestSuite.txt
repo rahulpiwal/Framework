@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 6, Time elapsed: 26.994 s <<< FAILURE! - in TestSuite
+initialize(Academy.validateNavigation)  Time elapsed: 11.537 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Driver server process died prematurely.
+Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
+System info: host: 'DESKTOP-73T78UR', ip: '192.168.43.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+	at Academy.validateNavigation.initialize(validateNavigation.java:25)
+
+initialize(Academy.HomePage)  Time elapsed: 2.581 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Driver server process died prematurely.
+Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
+System info: host: 'DESKTOP-73T78UR', ip: '192.168.43.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+	at Academy.HomePage.initialize(HomePage.java:24)
+
+initialize(Academy.validateTitle)  Time elapsed: 12.107 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Driver server process died prematurely.
+Build info: version: '4.0.0-alpha-7', revision: 'de8579b6d5'
+System info: host: 'DESKTOP-73T78UR', ip: '192.168.43.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: ChromeDriver
+	at Academy.validateTitle.initialize(validateTitle.java:24)
+
