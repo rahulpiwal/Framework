@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 
 public class LandingPage {
 	public WebDriver driver;
-	By signin = By.xpath("//span[text()='Login']");
-	By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
-	By nav = By.xpath("//ul[@class='nav navbar-nav navbar-right']");
+	private By signin = By.xpath("//span[text()='Login']");
+	private By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
+	private By nav = By.xpath("//ul[@class='nav navbar-nav navbar-right']");
+	private By header = By.xpath(
+			"//p[contains(text(),'Learn Hot tools like Selenium, Appium, JMeter, SoapUI,Database Testing and more..')]");
 
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
@@ -26,6 +28,10 @@ public class LandingPage {
 
 	public WebElement getNavigation() {
 		return driver.findElement(nav);
+	}
+
+	public WebElement getHeader() {
+		return driver.findElement(header);
 	}
 
 }

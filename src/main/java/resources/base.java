@@ -26,19 +26,22 @@ public class base {
 
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(
-				"C:\\eclipse-work\\E2EProject\\src\\main\\java\\resources\\data.properties");
+				System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties");
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
 		System.out.println(browserName);
-		if (browserName.equalsIgnoreCase("chrome")) {
+		if (browserName.contains("chrome")) {
 			System.out.println(browserName);
 			System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
-			ChromeOptions handlingSSL = new ChromeOptions();
-			handlingSSL.setAcceptInsecureCerts(true);
-			driver = new ChromeDriver(handlingSSL);
+			ChromeOptions options = new ChromeOptions();
+			if (browserName.contains("headleass"))
+				options.addArguments("headless");
+			options.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(options);
 		}
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		return driver;
 
 	}
